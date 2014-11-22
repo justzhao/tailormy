@@ -1,0 +1,30 @@
+{
+    "description": "",
+    "content_scripts": [
+        {
+            "matches": [ "http:\\/\\/.+?\\.(gif|jpg|png|pdf|doc|css|js)$" ],
+            "delayed": true,
+            "instruction": "other.js"
+        },
+
+    {
+      "description": "登录提交验证",
+      "matches": [ "http:\\/\\/192\\.168\\.61\\.11\\/main\\/login.asp$" ],
+      "delayed": true,
+      "instruction": "login.jst"
+    },
+       {
+        "description": "homePage",
+      "matches": [ "http:\\/\\/192\\.168\\.61\\.11\\/homePage$" ],
+      "delayed": true,
+      "instruction": "homePage.jst"
+    },
+       
+        {
+            "description": "login",
+            "matches": [ "http:\\/\\/192\\.168\\.61\\.11"],
+            "delayed": true,
+            "instruction": "login.jst"
+        } 
+    ]
+}
