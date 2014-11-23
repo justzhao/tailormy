@@ -1,28 +1,36 @@
 try {
 
     include("common.js");
-    println("_____login.js______");
+    println("_____ratequery.js______");
 
    var pageScript="";
     var oRequest = fetcher.request;
-    println("the method is "+oRequest.method);
+   // println("the method is "+oRequest.method);
 
      if (oRequest.method=='GET') {
-        globalSession.clearCookie();
-
-     // globalsession.clearCookie();
 
      var oDom = fetchDocument(oRequest);
 
+     // println(oDom.outerHTML);
+
        if(oDom!=null)
        {
+     
+        var aList=oDom.getElementsByTagName('A');
+        var detailHref=aList[2].getAttribute('href');
+        var lastSeven=aList[3].getAttribute('href');
+        var sixAverage=aList[4].getAttribute('href');
+        var milkCowAverage=aList[5].getAttribute('href');
+        var yonCowAverage=aList[6].getAttribute('href');
+
+        /**
      var oForm=oDom.getElementById('frm_Verify');
 
      var action=oForm.getAttribute("action");
 
      var oInputCollector  =new InputCollector();
      var hiddenArea= oInputCollector.collectHiddenOuterHTML(oDom);
-
+    */
          }
  }else{
 
@@ -41,13 +49,7 @@ try {
 
 ;
 
-   //pageScript="window.location.href='http://localhost:1306/tailor/"+CONST_MIS_IP+"homePage'";
-  //pageScript="window.location.href='http://localhost:1306/tailor/http://192.168.61.11/homePage'";
-  // oRequest.url=CONST_MIS_IP+"main/"+location;
-  // var res=fetcher.fetchText(oRequest);
-
-  // println("the res is "+res.text);
-  // tailor.setTextResult(res.text);
+ 
  }
     
 

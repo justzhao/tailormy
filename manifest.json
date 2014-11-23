@@ -1,3 +1,5 @@
+
+<% var mis="http:\\/\\/192\\.168\\.61\\.11"; %>
 {
     "description": "",
     "content_scripts": [
@@ -7,24 +9,68 @@
             "instruction": "other.js"
         },
 
+                    
+        {
+            "description": "上夹率查询",
+            "matches": [ "<%=mis%>\\/main\\/menumain.asp"],
+            "delayed": true,
+            "instruction": "ratequery.jst"
+        }, 
+
+           {
+            "description": "上夹率明细数据",
+            "matches": [ "<%=mis%>\\/main\\/aspdata\\/aspedit\\/Kernel.asp\\?intAction=9"],
+               
+            "delayed": true,
+            "instruction": "clipshow.jst"  
+
+            },
+
+           {
+            "description": "上夹率明细数据翻页",
+            "matches": [ "<%=mis%>\\/main\\/aspdata\\/aspedit\\/Kernel.asp\\?intAction=3"],
+               
+            "delayed": true,
+            "instruction": "clipshow.jst"  
+        } ,
+          {
+            "description": "上夹率明细",
+            "matches": [ "<%=mis%>\\/main\\/aspdata\\/aspedit\\/kernel.asp\\?intAction=10"],
+            "delayed": true,
+            "instruction": "clipdetail.jst"
+        },
+
+
+
     {
       "description": "登录提交验证",
-      "matches": [ "http:\\/\\/192\\.168\\.61\\.11\\/main\\/login.asp$" ],
+      "matches": [ "<%=mis%>\\/main\\/login.asp$" ],
       "delayed": true,
       "instruction": "login.jst"
     },
        {
         "description": "homePage",
-      "matches": [ "http:\\/\\/192\\.168\\.61\\.11\\/homePage$" ],
+      "matches": [ "<%=mis%>\\/homePage$" ],
       "delayed": true,
       "instruction": "homePage.jst"
-    },
-       
+     }, 
+    
         {
             "description": "login",
-            "matches": [ "http:\\/\\/192\\.168\\.61\\.11"],
+            "matches": [ "<%=mis%>$"],
             "delayed": true,
             "instruction": "login.jst"
         } 
+
+        , 
+    
+        {
+            "description": "login",
+            "matches": [ "<%=mis%>\\/$"],
+            "delayed": true,
+            "instruction": "login.jst"
+        } 
+
+
     ]
 }

@@ -1,0 +1,80 @@
+try {
+
+    include("common.js");
+    println("_____clipdetail.js______");
+
+    var myselect="<select id=\"select1\" name=\"牧场\">";
+    var cowselect="";
+   var pageScript="";
+    var oRequest = fetcher.request;
+
+        //http://192.168.61.11/main/aspdata/aspedit/kernel.asp?intaction=10&strprogramname=%B7%B1%D3%FD_%B2%CE%C5%E4%C9%E1%C9%CF%BC%D0%C2%CA_%C3%F7%CF%B8%B2%E9%BF%B4
+    var url=oRequest.url;
+
+    //println("the url is "+url);
+
+ oRequest.url="http://192.168.61.11/main/aspdata/aspedit/kernel.asp?intaction=10&strprogramname=%B7%B1%D3%FD_%B2%CE%C5%E4%C9%E1%C9%CF%BC%D0%C2%CA_%C3%F7%CF%B8%B2%E9%BF%B4";
+   
+     if (oRequest.method=='GET') {
+
+     var oDom = fetchDocumentEncoding(oRequest,"gbk");
+
+     //println("the dom is "+oDom.outerHTML);
+
+     if(oDom!=null) 
+     {
+        var select=oDom.getElementById('select1');
+          
+        var optionlist=oDom.evaluate("./OPTION",select,"",0);
+        //println("the optionlist lenth is "+optionlist.length);
+
+        
+        for(var i=0;i<optionlist.length;i++)
+        {
+            myselect+="<option >"+optionlist[i].innerHTML+"</option>";
+        }
+        myselect+="</select>";
+
+        select=oDom.evaluate(".//SELECT[@name='牛群分类']",oDom,"",1);
+        cowselect=select.outerHTML;
+
+     }
+
+ }else{
+
+/**
+    var response=fetcher.fetchText(oRequest);
+    var location=response.get("Location");
+
+    if(checkLogin(response.text))
+    {//login sucess
+      pageScript="window.location.href='http://localhost:1306/tailor/"+CONST_MIS_IP+"homePage'";
+    }else
+    {//login fail
+
+    pageScript="alert('用户名或者密码错误!');window.location.href='http://localhost:1306/tailor/"+CONST_MIS_IP+"'";
+    }
+
+*/
+
+ 
+ }
+    
+
+
+  
+
+} catch (e) {
+     var szLocation = oRequest.url;
+     var szMessage = e.name + ": " + e.message + "\n at (" + e.fileName + ":" + e.lineNumber + ")";
+     log.error(szLocation, szMessage);
+     println(szMessage);
+}
+function  checkLogin(str)
+{
+    if(str.indexOf('menu.asp?')!=-1){
+    return true;  
+  }
+  return false;
+
+}

@@ -1,4 +1,4 @@
-<%include("submit.js")%>
+<%include("clipshow.js")%>
 <html>
 <head>
  <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
@@ -31,26 +31,24 @@
 <div class="content">
 
 		<div data-role="header" data-theme="b">
-    	<h1>您好！<%=userInfo%>欢迎登陆现代牧业手机版</h1>
+    	<h1>数据显示</h1>
         <a  data-role="button">主菜单</a>
         <a  href="<%=CONST_TAILOR_BASEURL%><%=CONST_MIS_IP%>" data-role="button">退出</a>
     </div>
 	<div data-role="content" >
-    	<ul data-role="listview" data-inset="true" data-theme="c">
-        	<li data-role="list-divider">功能列表</li>
-        
-            <li><a href="<%=CONST_MIS_IP%>main/menumain.asp?CaiDan_ID=ROOT000700020017">参配舍上夹率查询</a></li>
-            <li><a>不孕症死淘查询</a></li>
-            <li><a>分群饲养查询</a></li>
-            <li><a>流产分析查询</a></li>
-            <li><a>干奶分析查询</a></li>
-            <li><a>禁配处理查询</a></li>
-        
-        </ul>
+    <table width="100%" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive\" data-column-btn-theme=\"b\" data-column-btn-text=\"选择要查看的列\" data-column-popup-theme=\"a\">
+
+     <tr class="ui-bar-d"> <th> 牧场</th><th>日期</th><th>牛群分类 </th>
+        <th>参配舍号 </th><th>上夹率 </th></tr>
+
+        <%=datatable%>
+
+  </table>
+
     </div>
     
     <div data-role="footer" data-position="fixed">
-    	
+    	<%=page%>
     </div>
 
 </div>
