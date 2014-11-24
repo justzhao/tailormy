@@ -22,20 +22,16 @@
 
 
 
-<div data-role="content">
-  <script>
 
-<%=pageScript%>
 
-</script>
 <style>
 
 
 .content{
-    height:800px;
+
 	padding: 10%;
 
-	background:url('<%=CONST_TAILOR_RES_BASEURL%>images/admin_bg.gif') repeat;
+	background:url('<%=CONST_TAILOR_RES_BASEURL%>images/admin_bg.gif') repeat !important;
 }
 #frm_Verify
 {
@@ -50,8 +46,21 @@
 <body >
 <!--http://192.168.61.11/main/login.asp-->
 <form id="frm_Verify" name="frm_Verify" method="post" action="http://192.168.61.11/main/login.asp">
-<div class="content">
 
+
+<div class="content">
+<div data-role="page" > 
+
+    <div data-role="header" data-theme="a">
+      <h1>现代牧业mis系统移动版登录</h1>
+      
+    </div>
+  <div data-role="content" >
+      <script>
+
+<%=pageScript%>
+
+</script>
 <div class="login" >
 	<%=hiddenArea%>
 
@@ -59,10 +68,13 @@
  
 <input type="password" value="ac" name="password" placeholder="请输入密码">
 
-<input type="submit" name="submit"  value="提交">
+<input  data-theme="e" data-role="button" type="submit" name="submit"  value="提交">
+
+</div>
 </div>
 </div>
 
+</div>
 </form>
 </body>
 

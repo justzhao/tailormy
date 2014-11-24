@@ -33,16 +33,16 @@
 <body>
 <div class="content">
 
-   
+   <div data-role="page" > 
 
      
 
-		<div data-role="header" data-theme="b">
+		<div data-role="header" data-theme="a">
     	<h1>参配舍上夹明细查询</h1>
         <a  data-role="button">主菜单</a>
         <a  href="<%=CONST_TAILOR_BASEURL%><%=CONST_MIS_IP%>" data-role="button">退出</a>
     </div>
-	<div data-role="content" >             
+	<div data-role="content" data-theme="a">             
 <form  method="post" action="http://192.168.61.11/main/aspdata/aspedit/Kernel.asp?intAction=9"> 
     <input type="hidden" name="ysf牧场" value="=">    
     <input type="hidden" name="ysf牛群分类" value="=">
@@ -251,7 +251,7 @@
     <div data-role="footer" data-position="fixed">
     	
     </div>
-
+</div>
 </div>
 </body>
 </html>

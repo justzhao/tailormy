@@ -52,6 +52,7 @@ try {
       var page=tds[1].childNodes[0].innerHTML;
       var text=new TextShears();
       page=text.filterSegment(page,"转到","页");
+      // page= page.replace(/\s/g,"");
       println("the page is "+page);
 
      }
@@ -97,6 +98,9 @@ try {
 
       tds=oDom.evaluate(".//TD",trs[0],"",0);
       var page=tds[1].childNodes[0].innerHTML;
+        var text=new TextShears();
+      page=text.filterSegment(page,"转到","页");
+     page= page.replace(/\s/g,"");
      // println("the page is "+page);
 
      }
