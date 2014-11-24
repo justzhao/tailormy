@@ -1,0 +1,66 @@
+<%include("lastseven.js")%>
+
+
+<html>
+<head>
+ <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+
+
+  <link rel="stylesheet" type="text/css" href="<%=CONST_TAILOR_RES_BASEURL%>css/jquery.mobile.theme-1.4.3.min.css" />
+
+     <link rel="stylesheet" type="text/css" href="<%=CONST_TAILOR_RES_BASEURL%>css/jquery.mobile.structure-1.4.3.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="<%=CONST_TAILOR_RES_BASEURL%>css/jquery.mobile-1.4.3.min.css" />
+
+
+      <script src="<%=CONST_TAILOR_RES_BASEURL%>js/jquery-1.9.1.min.js" type="text/javascript"></script> 
+      
+      <script src="<%=CONST_TAILOR_RES_BASEURL%>js/jquery.mobile-1.4.3.min.js" type="text/javascript"></script>   
+
+<title>
+后台首页
+</title>
+<style>
+.content{
+    height:800px;
+	padding: 2%;
+
+	
+}
+
+</style>
+</head>
+
+<body>
+<div class="content">
+
+   
+
+     
+
+		<div data-role="header" data-theme="b">
+    	<h1>参配舍上夹率-最近7日</h1>
+        <a  data-role="button">主菜单</a>
+        <a  href="<%=CONST_TAILOR_BASEURL%><%=CONST_MIS_IP%>" data-role="button">退出</a>
+    </div>
+	<div data-role="content" >             
+
+    <table width="100%" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive\" data-column-btn-theme=\"b\" data-column-btn-text=\"选择要查看的列\" data-column-popup-theme=\"a\">
+
+     
+        	<%=datatable%>
+        
+
+  </table>
+
+    </div>
+    
+    <div data-role="footer" data-position="fixed">
+    	<%=page%>
+    </div>
+
+    
+
+</div>
+</body>
+</html>
