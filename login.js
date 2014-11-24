@@ -63,8 +63,8 @@ try {
 function  checkLogin(str)
 {
     if(str.indexOf('menu.asp?')!=-1){
-    return true;  
-  }
+      return true;  
+    }
   return false;
 
 }

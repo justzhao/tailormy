@@ -39,7 +39,12 @@
             "delayed": true,
             "instruction": "clipdetail.jst"
         },
-
+        {
+            "description": "最近七日",
+            "matches": [ "<%=mis%>\\/main\\/aspdata\\/aspedit\\/kernel.asp\\?intaction=12"],
+            "delayed": true,
+            "instruction": "lastseven.jst"
+        }, 
 
 
     {

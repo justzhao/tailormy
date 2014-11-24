@@ -5,7 +5,7 @@ const CONST_MIS_IP="http://192.168.61.11/";
  
 const CONST_TAILOR_IP="localhost"; 
 const CONST_TAILOR_BASEURL="http://" + CONST_TAILOR_IP + ":1306/tailor/"; 
-const CONST_TAILOR_RES_BASEURL="http://" + CONST_TAILOR_IP + ":8081/other/mis/";
+const CONST_TAILOR_RES_BASEURL="http://" + CONST_TAILOR_IP + ":8080/other/mis/";
 
      
  
