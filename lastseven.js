@@ -2,6 +2,7 @@ try {
 
     include("common.js");
     println("_____lastseven.js______");
+    var title = ""; //
     var datatable="";
 
     var oRequest = fetcher.request;
@@ -21,15 +22,17 @@ try {
    
 		var oDom = fetchDocumentEncoding(oRequest,"gbk");
     	var text = oDom.outerHTML;
-    	
+    	//println("text is"+text);
 		/*var location = repse.get("Location");
 		println("location is "+ location);*/
-		
+		var titleDom = oDom.evaluate(".//STRONG",oDom,"",1);
+		//println("title "+titleDom.innerHTML);
+		title = titleDom.innerHTML;
 		var tablelist=oDom.evaluate(".//TABLE",oDom,"",0);
 		//println("tablelist length is "+tablelist.length);
 		if(tablelist.length==4) {
 			var trs=oDom.evaluate(".//TR",tablelist[2],"",0);
-			println("trs length is "+trs.length);
+			//println("trs length is "+trs.length);
 			var td1 = oDom.evaluate(".//TD",trs[0],"",0);
 			datatable+="<tr class=\"ui-bar-d\">";
 			for(var i=0;i<td1.length;i++){
@@ -54,7 +57,7 @@ try {
 				//println("tds length is "+tds.length);
                 
 		        datatable+="<tr>";
-		        datatable+="<td>"+tds[0].innerHTML +"</td>";
+		        /*datatable+="<td>"+tds[0].innerHTML +"</td>";
 		        datatable+="<td>"+tds[1].innerHTML +"</td>";
 		        datatable+="<td>"+tds[2].innerHTML +"</td>";
 		        datatable+="<td>"+tds[3].innerHTML +"</td>";
@@ -66,6 +69,12 @@ try {
 		        datatable+="<td>"+tds[9].innerHTML +"</td>";
 		        datatable+="<td>"+tds[10].innerHTML +"</td>";
 
+*/
+				for(var j=0;j<tds.length;j++) {
+
+		        	datatable+="<td>"+tds[j].innerHTML +"</td>";
+		       
+		        }
 		        datatable+="</tr>";
 			}
 
@@ -76,7 +85,7 @@ try {
 		    var page=tds[1].childNodes[0].innerHTML;
 		    var text=new TextShears();
 		    page=text.filterSegment(page,"转到","页");
-		    println("the page is "+page);
+		    //println("the page is "+page);
 		}
 
     } else {

@@ -34,7 +34,7 @@
 <div class="content">
 <div data-role="page">
 		<div data-role="header" data-theme="a">
-    	<h1>参配舍上夹率查询</h1>
+    	<h1><%=title%></h1>
         <a  data-role="button"  data-rel="back">返回</a>
         <a  href="<%=CONST_TAILOR_BASEURL%><%=CONST_MIS_IP%>" data-role="button">退出</a>
     </div>
@@ -42,11 +42,7 @@
     	<ul data-role="listview" data-inset="true" data-theme="a">
         	<li data-role="list-divider">功能列表</li>
         
-            <li><a href="<%=detailHref%>"  rel="external" >明细查看</a></li>
-            <li><a href="<%=lastSeven%>">最近七日</a></li>
-            <li><a href="<%=sixAverage%>">过去六天平均</a></li>
-            <li><a href="<%=milkCowAverage%>">泌乳牛过去六天平均</a></li>
-            <li><a href="<%=yonCowAverage%>">青年牛过去六天平均</a></li>
+            <%=a_html%>
          
         
         </ul>
