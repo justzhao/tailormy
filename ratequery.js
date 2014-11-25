@@ -18,6 +18,7 @@ try {
      
         var aList=oDom.getElementsByTagName('A');
         var detailHref=aList[2].getAttribute('href');
+        println("the detailHref is "+detailHref);
         var lastSeven=aList[3].getAttribute('href');
         var sixAverage=aList[4].getAttribute('href');
         var milkCowAverage=aList[5].getAttribute('href');

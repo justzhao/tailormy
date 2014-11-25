@@ -14,6 +14,8 @@ try {
 	var uri=uriPar.parse(url);
 	var collection= uri.queryItems;
 	var after=collection.getValue("strprogramname");
+	println("the after is "+after);
+	
 
 	/**
     var code="%E7%B9%81%E8%82%B2_%E5%8F%82%E9%85%8D%E8%88%8D%E4%B8%8A%E5%A4%B9%E7%8E%87_%E6%98%8E%E7%BB%86%E6%9F%A5%E7%9C%8B";
@@ -24,7 +26,7 @@ try {
 	
 */
 	var newcode=URLEncode(after); 
-	println("the after is "+newcode);
+	println("the newcode is "+newcode);
    //oRequest.url="http://192.168.61.11/main/aspdata/aspedit/kernel.asp?intaction=10&strprogramname=%B7%B1%D3%FD_%B2%CE%C5%E4%C9%E1%C9%CF%BC%D0%C2%CA_%C3%F7%CF%B8%B2%E9%BF%B4";
    oRequest.url="http://192.168.61.11/main/aspdata/aspedit/kernel.asp?intaction=10&strprogramname="+newcode;
      if (oRequest.method=='GET') {

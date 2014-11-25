@@ -32,14 +32,14 @@
 
 <body>
 <div class="content">
-
-		<div data-role="header" data-theme="b">
+<div data-role="page">
+		<div data-role="header" data-theme="a">
     	<h1>参配舍上夹率查询</h1>
-        <a  data-role="button">主菜单</a>
+        <a  data-role="button"  data-rel="back">返回</a>
         <a  href="<%=CONST_TAILOR_BASEURL%><%=CONST_MIS_IP%>" data-role="button">退出</a>
     </div>
 	<div data-role="content" >
-    	<ul data-role="listview" data-inset="true" data-theme="c">
+    	<ul data-role="listview" data-inset="true" data-theme="a">
         	<li data-role="list-divider">功能列表</li>
         
             <li><a href="<%=detailHref%>"  rel="external" >明细查看</a></li>
@@ -55,7 +55,7 @@
     <div data-role="footer" data-position="fixed">
     	
     </div>
-
+</div>
 </div>
 </body>
 </html>
